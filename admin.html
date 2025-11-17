@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDAR | Panel administrativo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div id="login-view" class="admin-shell">
+        <form id="login-form" class="login-card" autocomplete="on">
+            <div>
+                <h1>Panel ANDAR</h1>
+                <p class="muted">Ingresa para administrar el catálogo de camisetas.</p>
+            </div>
+            <div id="login-error" class="error-banner hidden" role="alert"></div>
+            <div class="form-group">
+                <label for="login-email">Correo administrador</label>
+                <input type="email" id="login-email" name="email" placeholder="admin@andar.com" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Contraseña</label>
+                <input type="password" id="login-password" name="password" placeholder="********" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Ingresar</button>
+            <p class="muted">Demo: <strong>admin@andar.com</strong> / <strong>andar2025</strong></p>
+        </form>
+    </div>
+
+    <div id="dashboard-view" class="hidden">
+        <header class="admin-bar">
+            <div>
+                <span class="brand">ANDAR</span>
+            </div>
+            <div class="admin-actions">
+                <span class="muted">Conectado como <strong id="admin-email"></strong></span>
+                <button type="button" class="btn btn-ghost" id="restore-btn">Restaurar catálogo</button>
+                <button type="button" class="btn btn-primary" id="logout-btn">Cerrar sesión</button>
+            </div>
+        </header>
+        <main class="admin-layout">
+            <div id="dashboard-flash" class="dashboard-flash hidden" role="status"></div>
+            <section class="admin-grid">
+                <article class="admin-panel">
+                    <div>
+                        <h2 id="form-title">Registrar nueva camiseta</h2>
+                        <p class="muted">Completa la información para crear o actualizar productos en el catálogo.</p>
+                    </div>
+                    <form id="product-form" class="product-form">
+                        <div class="form-row two-columns">
+                            <div class="form-group">
+                                <label for="product-id">Identificador</label>
+                                <input type="text" id="product-id" name="id" placeholder="aurora" required>
+                                <small class="muted">Sólo minúsculas, números y guiones. Se usa en la URL.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-name">Nombre</label>
+                                <input type="text" id="product-name" name="name" placeholder="Camiseta Aurora" required>
+                            </div>
+                        </div>
+                        <div class="form-row two-columns">
+                            <div class="form-group">
+                                <label for="product-price">Precio (COP)</label>
+                                <input type="number" id="product-price" name="price" min="0" step="1000" placeholder="89900" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="product-hero-tag">Etiqueta destacada</label>
+                                <input type="text" id="product-hero-tag" name="heroTag" placeholder="Colección cápsula 2025">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-highlight-title">Título destacado</label>
+                            <input type="text" id="product-highlight-title" name="highlightTitle" placeholder="Estilo radiante para días largos">
+                        </div>
+                        <div class="form-group">
+                            <label for="product-hero-description">Descripción principal</label>
+                            <textarea id="product-hero-description" name="heroDescription" placeholder="Texto que aparecerá en el hero y resumen del producto."></textarea>
+                        </div>
+                        <div class="form-row two-columns">
+                            <div class="form-group">
+                                <label for="product-sizes">Tallas disponibles</label>
+                                <input type="text" id="product-sizes" name="sizes" placeholder="XS, S, M, L">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-badges">Sellos destacados</label>
+                                <input type="text" id="product-badges" name="badges" placeholder="Algodón orgánico, Hecho en Medellín">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-details">Descripción detallada</label>
+                            <textarea id="product-details" name="details" placeholder="Escribe una idea por línea para mostrar en el detalle."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-whatsapp">Mensaje para WhatsApp</label>
+                            <input type="text" id="product-whatsapp" name="whatsappMessage" placeholder="Hola ANDAR, quiero comprar la camiseta Aurora">
+                        </div>
+                        <div class="form-row two-columns">
+                            <div class="form-group">
+                                <label for="product-cover">Imagen de catálogo</label>
+                                <input type="url" id="product-cover" name="coverImage" placeholder="https://...">
+                            </div>
+                            <div class="form-group">
+                                <label for="product-main">Imagen hero/detalle</label>
+                                <input type="url" id="product-main" name="mainImage" placeholder="https://...">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-gallery">Galería de imágenes</label>
+                            <textarea id="product-gallery" name="gallery" placeholder="Escribe una URL por línea para la galería."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" id="save-product-btn">Guardar camiseta</button>
+                            <button type="button" class="btn btn-secondary hidden" id="cancel-edit-btn">Cancelar edición</button>
+                        </div>
+                    </form>
+                </article>
+                <article class="admin-panel">
+                    <div>
+                        <h2>Inventario publicado</h2>
+                        <p class="muted">Gestiona las camisetas activas en el sitio.</p>
+                    </div>
+                    <div class="muted">Total de productos: <strong id="product-count">0</strong></div>
+                    <div id="products-wrapper" class="table-wrapper hidden">
+                        <table class="product-table" id="products-table">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio</th>
+                                    <th>Tallas</th>
+                                    <th>Sellos</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                    <div id="products-empty" class="dashboard-empty">
+                        <p>Aún no hay camisetas registradas. Crea la primera para que aparezca en el catálogo.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/admin.js"></script>
+</body>
+</html>

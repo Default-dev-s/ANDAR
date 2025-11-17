@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDAR | Camisetas que inspiran movimiento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <header class="hero">
+        <nav class="nav">
+            <div class="brand">ANDAR</div>
+            <ul class="nav-links">
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#valores">Valores</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a class="nav-cta" href="admin.html">Administrar</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <div class="hero-copy">
+                <span class="hero-tag">Colección cápsula 2025</span>
+                <h1>Movimiento, estilo y comodidad en cada camiseta.</h1>
+                <p>Diseñamos prendas versátiles para cada jornada. ANDAR es energía, creatividad y confianza para personas que no se detienen.</p>
+                <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
+            </div>
+            <div class="hero-visual">
+                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" alt="Persona vistiendo camiseta ANDAR">
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="valores" class="values">
+            <h2>Por qué elegir ANDAR</h2>
+            <div class="value-list">
+                <article class="value-card">
+                    <h3>Diseño consciente</h3>
+                    <p>Trabajamos con tejidos suaves y resistentes, inspirados en el ritmo urbano y la naturaleza.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Hecho localmente</h3>
+                    <p>Producción responsable en talleres locales, garantizando calidad y condiciones justas.</p>
+                </article>
+                <article class="value-card">
+                    <h3>Estilo sin esfuerzo</h3>
+                    <p>Combinaciones pensadas para cualquier plan: trabajo, viaje o un día relajado.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="catalogo" class="catalog">
+            <div class="section-heading">
+                <h2>Catálogo de camisetas</h2>
+                <p>Explora las siluetas destacadas de la temporada.</p>
+            </div>
+            <div id="catalog-grid" class="catalog-grid" aria-live="polite">
+                <noscript>
+                    <p>Activa JavaScript para ver el catálogo.</p>
+                </noscript>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contacto" class="footer">
+        <div class="footer-brand">
+            <span class="brand">ANDAR</span>
+            <p>Mantente en movimiento. Suscríbete para enterarte de lanzamientos exclusivos.</p>
+        </div>
+        <form class="newsletter" action="#">
+            <label for="email" class="sr-only">Correo electrónico</label>
+            <input type="email" id="email" name="email" placeholder="Tu correo electrónico">
+            <button type="submit" class="btn btn-secondary">Unirme</button>
+        </form>
+        <div class="footer-meta">
+            <small>© 2025 ANDAR. Todos los derechos reservados.</small>
+            <div class="socials">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.tiktok.com" target="_blank" rel="noopener">TikTok</a>
+                <a href="mailto:hola@andar.com">hola@andar.com</a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
